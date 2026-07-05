@@ -5,6 +5,7 @@ services:
   photoprism:
     image: photoprism/photoprism:latest
     container_name: photoprism
+
     ports:
       - "9090:2342"
     environment:
@@ -19,6 +20,7 @@ services:
   nextcloud:
     image: nextcloud:31.0.7
     container_name: nextcloud
+
     ports:
       - "9091:80"
     volumes:
@@ -31,6 +33,7 @@ services:
   jellyfin:
     image: jellyfin/jellyfin:latest
     container_name: jellyfin
+
     ports:
       - "9092:8096"
     volumes:
@@ -44,6 +47,7 @@ services:
   jellyseerr:
     image: ghcr.io/seerr-team/seerr:latest
     container_name: jellyseerr
+
     ports:
       - "9093:5055"
     environment:
@@ -58,6 +62,7 @@ services:
   qbittorrent:
     image: lscr.io/linuxserver/qbittorrent:latest
     container_name: qbittorrent
+
     ports:
       - "9094:8080"
       - "6881:6881"
@@ -77,6 +82,7 @@ services:
   sonarr:
     image: lscr.io/linuxserver/sonarr:latest
     container_name: sonarr
+
     ports:
       - "9095:8989"
     environment:
@@ -93,6 +99,7 @@ services:
   radarr:
     image: lscr.io/linuxserver/radarr:latest
     container_name: radarr
+
     ports:
       - "9096:7878"
     environment:
@@ -122,6 +129,7 @@ services:
   prowlarr:
     image: lscr.io/linuxserver/prowlarr:latest
     container_name: prowlarr
+
     ports:
       - "9097:9696"
     environment:
