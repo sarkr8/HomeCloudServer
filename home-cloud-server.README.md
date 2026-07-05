@@ -26,11 +26,19 @@ Cada servicio está contenido y montado de forma modular bajo su carpeta respect
 
 ## 🛠️ Instalación y Arranque Rápido
 
-1. Abre una terminal en la raíz del proyecto.
-2. Inicia todos los servicios (incluyendo CasaOS en contenedor):
+Para levantar el servidor multimedia completo en cualquier máquina Linux con Docker instalado, sigue estos pasos:
+
+1. Abre una terminal en la raíz de la carpeta `HomeCloudServer`.
+2. Dale permisos de ejecución al script de arranque (solo la primera vez):
    ```bash
-   docker compose up -d
+   chmod +x iniciar.sh
    ```
+3. Ejecuta el script de inicialización y arranque automático:
+   ```bash
+   ./iniciar.sh
+   ```
+   *(El script creará automáticamente toda la estructura física de carpetas, copiará las bases de datos de plantillas genéricas preconfiguradas, corregirá los permisos y levantará todos los contenedores en segundo plano).*
+
 
 3. Acceso a los servicios desde la red local:
    - **CasaOS**: [http://localhost](http://localhost) (Puerto `80`)
