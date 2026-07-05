@@ -16,19 +16,19 @@ CLAUDE.md
 
 # Directorios de Datos, Bases de Datos, Caches y Logs de los Servicios
 # (Se ignoran para no subir bases de datos SQLite gigantes ni credenciales privadas a GitHub)
-casa/
-casaos/
-cloudflare-tunnel/
-jellyfin/
-jellyseerr/
-nextcloud/
-photoprism/
-prowlarr/
-qbittorrent/
-radarr/
-sonarr/
-transmission/
-users/
+/casa/
+/casaos/
+/cloudflare-tunnel/
+/jellyfin/
+/jellyseerr/
+/nextcloud/
+/photoprism/
+/prowlarr/
+/qbittorrent/
+/radarr/
+/sonarr/
+/transmission/
+/users/
 
 # Carpeta de Contenido Multimedia (Películas, Series, Descargas)
-media/
+/media/
