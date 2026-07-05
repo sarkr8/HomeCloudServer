@@ -1,0 +1,139 @@
+version: '3.9'
+name: home-cloud-server
+
+services:
+  photoprism:
+    image: photoprism/photoprism:latest
+    container_name: photoprism
+    ports:
+      - "9090:2342"
+    environment:
+      PHOTOPRISM_ADMIN_PASSWORD: "admin"  # cámbialo después
+    volumes:
+      - ./photoprism/storage:/photoprism/storage
+      - ./media/fotos:/photoprism/originals
+    restart: unless-stopped
+    networks:
+      - home_net
+
+  nextcloud:
+    image: nextcloud:31.0.7
+    container_name: nextcloud
+    ports:
+      - "9091:80"
+    volumes:
+      - ./nextcloud/data:/var/www/html
+      - ./nextcloud/media:/mnt/media_hdd
+    restart: unless-stopped
+    networks:
+      - home_net
+
+  jellyfin:
+    image: jellyfin/jellyfin:latest
+    container_name: jellyfin
+    ports:
+      - "9092:8096"
+    volumes:
+      - ./jellyfin/config:/config
+      - ./jellyfin/cache:/cache
+      - ./media:/media
+    restart: unless-stopped
+    networks:
+      - home_net
+  
+  jellyseerr:
+    image: ghcr.io/seerr-team/seerr:latest
+    container_name: jellyseerr
+    ports:
+      - "9093:5055"
+    environment:
+      - LOG_LEVEL=debug
+      - TZ=America/Mexico_City
+    volumes:
+      - ./jellyseerr:/app/config
+    restart: unless-stopped
+    networks:
+      - home_net
+
+  qbittorrent:
+    image: lscr.io/linuxserver/qbittorrent:latest
+    container_name: qbittorrent
+    ports:
+      - "9094:8080"
+      - "6881:6881"
+      - "6881:6881/udp"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Mexico_City
+      - WEBUI_PORT=8080
+    volumes:
+      - ./qbittorrent/config:/config
+      - ./media:/media
+    restart: unless-stopped
+    networks:
+      - home_net
+  
+  sonarr:
+    image: lscr.io/linuxserver/sonarr:latest
+    container_name: sonarr
+    ports:
+      - "9095:8989"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Mexico_City
+    volumes:
+      - ./sonarr/config:/config
+      - ./media:/media    # ve descargas/ y series/
+    restart: unless-stopped
+    networks:
+      - home_net
+
+  radarr:
+    image: lscr.io/linuxserver/radarr:latest
+    container_name: radarr
+    ports:
+      - "9096:7878"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Mexico_City
+    volumes:
+      - ./radarr/config:/config
+      - ./media:/media    # ve descargas/ y peliculas/
+    restart: unless-stopped
+    networks:
+      - home_net
+
+  casa:
+    image: dockurr/casa:latest
+    container_name: casa
+    ports:
+      - "80:8080"
+    volumes:
+      - ./casa:/DATA
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: always
+    stop_grace_period: 1m
+    networks:
+      - home_net
+
+  prowlarr:
+    image: lscr.io/linuxserver/prowlarr:latest
+    container_name: prowlarr
+    ports:
+      - "9097:9696"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Mexico_City
+    volumes:
+      - ./prowlarr/config:/config
+    restart: unless-stopped
+    networks:
+      - home_net
+
+networks:
+  home_net:
+    driver: bridge

@@ -1,0 +1,34 @@
+# IDEs y Editores
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Contexto Local del Agente (Ahorro de Tokens)
+CLAUDE.md
+
+# Archivos de Entorno / Secretos
+.env
+*.local.env
+
+# Directorios de Datos, Bases de Datos, Caches y Logs de los Servicios
+# (Se ignoran para no subir bases de datos SQLite gigantes ni credenciales privadas a GitHub)
+casa/
+casaos/
+cloudflare-tunnel/
+jellyfin/
+jellyseerr/
+nextcloud/
+photoprism/
+prowlarr/
+qbittorrent/
+radarr/
+sonarr/
+transmission/
+users/
+
+# Carpeta de Contenido Multimedia (Películas, Series, Descargas)
+media/
