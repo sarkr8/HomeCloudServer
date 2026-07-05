@@ -87,7 +87,7 @@
 !.gitignore
 !docker-compose.yml
 !iniciar.sh
-!home-cloud-server.README.md
+!README.md
 !home-cloud-server.env
 
 # Plantillas públicas
