@@ -1,34 +1,98 @@
-# IDEs y Editores
-.idea/
-.vscode/
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.swp
+# IDEs locales y archivos de contexto
+/.idea/**
+/.vscode/**
+/CLAUDE.md
+/.env
+/*.local.env
 
-# Contexto Local del Agente (Ahorro de Tokens)
-CLAUDE.md
+# ==============================================================================
+# REGLAS PARA SUBIR EL ÁRBOL DE CARPETAS SIN CONTENIDO (SÓLO .gitkeep)
+# ==============================================================================
 
-# Archivos de Entorno / Secretos
-.env
-*.local.env
+# Casa, CasaOS y Cloudflare Tunnel
+/casa/*
+!/casa/.gitkeep
+/casaos/*
+!/casaos/.gitkeep
+/cloudflare-tunnel/*
+!/cloudflare-tunnel/.gitkeep
 
-# Directorios de Datos, Bases de Datos, Caches y Logs de los Servicios
-# (Se ignoran para no subir bases de datos SQLite gigantes ni credenciales privadas a GitHub)
-/casa/
-/casaos/
-/cloudflare-tunnel/
-/jellyfin/
-/jellyseerr/
-/nextcloud/
-/photoprism/
-/prowlarr/
-/qbittorrent/
-/radarr/
-/sonarr/
-/transmission/
-/users/
+# Nextcloud, PhotoPrism, Transmission y Users
+/nextcloud/*
+!/nextcloud/.gitkeep
+/photoprism/*
+!/photoprism/.gitkeep
+/transmission/*
+!/transmission/.gitkeep
+/users/*
+!/users/.gitkeep
 
-# Carpeta de Contenido Multimedia (Películas, Series, Descargas)
-/media/
+# Jellyfin (subcarpetas config y cache)
+/jellyfin/*
+!/jellyfin/config/
+!/jellyfin/cache/
+/jellyfin/config/*
+!/jellyfin/config/.gitkeep
+/jellyfin/cache/*
+!/jellyfin/cache/.gitkeep
+
+# Jellyseerr (subcarpeta db)
+/jellyseerr/*
+!/jellyseerr/db/
+/jellyseerr/db/*
+!/jellyseerr/db/.gitkeep
+
+# Prowlarr, qBittorrent, Radarr, Sonarr (subcarpeta config)
+/prowlarr/*
+!/prowlarr/config/
+/prowlarr/config/*
+!/prowlarr/config/.gitkeep
+
+/qbittorrent/*
+!/qbittorrent/config/
+/qbittorrent/config/*
+!/qbittorrent/config/.gitkeep
+
+/radarr/*
+!/radarr/config/
+/radarr/config/*
+!/radarr/config/.gitkeep
+
+/sonarr/*
+!/sonarr/config/
+/sonarr/config/*
+!/sonarr/config/.gitkeep
+
+# Media (subcarpetas de películas, series, descargas, etc.)
+/media/*
+!/media/peliculas/
+!/media/series/
+!/media/descargas/
+!/media/fotos/
+!/media/incomplete/
+!/media/watch/
+
+/media/peliculas/*
+!/media/peliculas/.gitkeep
+/media/series/*
+!/media/series/.gitkeep
+/media/descargas/*
+!/media/descargas/.gitkeep
+/media/fotos/*
+!/media/fotos/.gitkeep
+/media/incomplete/*
+!/media/incomplete/.gitkeep
+/media/watch/*
+!/media/watch/.gitkeep
+
+# ==============================================================================
+# EXCEPCIONES GENERALES (ARCHIVOS DE CONFIGURACIÓN DEL REPO)
+# ==============================================================================
+!.gitignore
+!docker-compose.yml
+!iniciar.sh
+!home-cloud-server.README.md
+!home-cloud-server.env
+
+# Plantillas públicas
+!/config-templates/**

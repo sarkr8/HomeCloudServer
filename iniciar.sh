@@ -28,7 +28,7 @@ directorios=(
   "cloudflare-tunnel"
   "jellyfin/config"
   "jellyfin/cache"
-  "jellyseerr"
+  "jellyseerr/db"
   "nextcloud"
   "photoprism"
   "prowlarr/config"
@@ -69,6 +69,7 @@ plantillas=(
   "radarr/config/radarr.db:config-templates/radarr/radarr.db"
   "sonarr/config/sonarr.db:config-templates/sonarr/sonarr.db"
   "prowlarr/config/prowlarr.db:config-templates/prowlarr/prowlarr.db"
+  "jellyseerr/db/db.sqlite3:config-templates/jellyseerr/db.sqlite3"
 )
 
 for item in "${plantillas[@]}"; do
