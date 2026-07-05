@@ -9,21 +9,17 @@
 # REGLAS PARA SUBIR EL ÁRBOL DE CARPETAS SIN CONTENIDO (SÓLO .gitkeep)
 # ==============================================================================
 
-# Casa, CasaOS y Cloudflare Tunnel
+# Casa y Cloudflare Tunnel
 /casa/*
 !/casa/.gitkeep
-/casaos/*
-!/casaos/.gitkeep
 /cloudflare-tunnel/*
 !/cloudflare-tunnel/.gitkeep
 
-# Nextcloud, PhotoPrism, Transmission y Users
+# Nextcloud, PhotoPrism y Users
 /nextcloud/*
 !/nextcloud/.gitkeep
 /photoprism/*
 !/photoprism/.gitkeep
-/transmission/*
-!/transmission/.gitkeep
 /users/*
 !/users/.gitkeep
 

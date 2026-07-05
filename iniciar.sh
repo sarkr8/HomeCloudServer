@@ -24,7 +24,6 @@ echo -e "${NC}"
 echo -e "* Creando estructura de directorios y bibliotecas multimedia..."
 directorios=(
   "casa"
-  "casaos"
   "cloudflare-tunnel"
   "jellyfin/config"
   "jellyfin/cache"
@@ -35,7 +34,6 @@ directorios=(
   "qbittorrent/config"
   "radarr/config"
   "sonarr/config"
-  "transmission"
   "users"
   "media/peliculas"
   "media/series"
@@ -93,9 +91,9 @@ echo -e "* Configurando propiedad de archivos a usuario no-root (1000:1000)..."
 # Usamos sudo si el usuario no es root o propietario de todo, pidiendo contraseña de ser necesario
 if [ "$EUID" -ne 0 ]; then
   echo -e "  [i] Es posible que se soliciten privilegios de administrador (sudo) para cambiar permisos..."
-  sudo chown -R 1000:1000 casa casaos cloudflare-tunnel jellyfin jellyseerr nextcloud photoprism prowlarr qbittorrent radarr sonarr transmission users media config-templates .env
+  sudo chown -R 1000:1000 casa cloudflare-tunnel jellyfin jellyseerr nextcloud photoprism prowlarr qbittorrent radarr sonarr users media config-templates .env
 else
-  chown -R 1000:1000 casa casaos cloudflare-tunnel jellyfin jellyseerr nextcloud photoprism prowlarr qbittorrent radarr sonarr transmission users media config-templates .env
+  chown -R 1000:1000 casa cloudflare-tunnel jellyfin jellyseerr nextcloud photoprism prowlarr qbittorrent radarr sonarr users media config-templates .env
 fi
 echo -e "  [+] Permisos configurados correctamente."
 
