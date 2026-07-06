@@ -22,7 +22,7 @@ Cada servicio está contenido y montado de forma modular bajo su carpeta respect
 ## 📦 Requisitos
 
 - Docker + Docker Compose
-- Zorin OS o cualquier distro Linux con soporte a contenedores
+- Cualquier distro Linux con soporte a contenedores
 
 ## 🛠️ Instalación y Arranque Rápido
 
